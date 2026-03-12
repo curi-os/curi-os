@@ -18,8 +18,8 @@
   --color-border: rgba(255, 255, 255, 0.08);
   --color-text: #e8eaf0;
   --color-text-muted: #8b90a0;
-  --color-accent: #7c6af7;
-  --color-accent-2: #4facfe;
+  --color-accent: #f98611;
+  --color-accent-2: #ffd060;
   --color-green: #3ecf8e;
   --color-red: #ff6b6b;
   --color-yellow: #ffd060;
@@ -184,8 +184,8 @@ svg {
 
 .hero__badge {
   display: inline-block;
-  background: rgba(124, 106, 247, 0.15);
-  border: 1px solid rgba(124, 106, 247, 0.35);
+  background: rgba(249, 134, 17, 0.15);
+  border: 1px solid rgba(249, 134, 17, 0.35);
   color: var(--color-accent);
   font-size: 0.7rem;
   font-weight: 600;
@@ -307,7 +307,7 @@ svg {
 }
 
 .card:hover {
-  border-color: rgba(124, 106, 247, 0.4);
+  border-color: rgba(249, 134, 17, 0.4);
   transform: translateY(-2px);
 }
 
@@ -457,7 +457,7 @@ svg {
 }
 
 .repo-card:hover {
-  border-color: rgba(124, 106, 247, 0.5);
+  border-color: rgba(249, 134, 17, 0.5);
   transform: translateY(-2px);
 }
 
@@ -500,8 +500,8 @@ svg {
 }
 
 .tag {
-  background: rgba(124, 106, 247, 0.1);
-  border: 1px solid rgba(124, 106, 247, 0.25);
+  background: rgba(249, 134, 17, 0.1);
+  border: 1px solid rgba(249, 134, 17, 0.25);
   color: var(--color-accent);
   font-size: 0.75rem;
   font-weight: 500;
