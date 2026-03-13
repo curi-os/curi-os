@@ -221,6 +221,10 @@ svg {
   justify-content: center;
 }
 
+.hero__video {
+  margin-top: 2.5rem;
+}
+
 /* ---------- Terminal -------------------------------------- */
 .terminal {
   width: 100%;
