@@ -41,7 +41,7 @@
         </h1>
         <p class="hero__sub">
           CuriOS is an operating system where the primary interface is
-          <strong>chat</strong>. No menus, no clicks — just type what you want
+          <strong>chat</strong>. No menus, no clicks, throw your mouse away — just type what you want
           and let the OS figure the rest out.
         </p>
         <div class="hero__cta">
@@ -85,22 +85,22 @@
           <div class="card">
             <div class="card__icon">💬</div>
             <h3 class="card__title">Session-based conversations</h3>
-            <p class="card__body">Context persists across turns. CuriOS remembers who you are and where you are in every flow.</p>
+            <p class="card__body">You can create your account and have persistent conversations across sessions and a customized chat experience.</p>
           </div>
           <div class="card">
             <div class="card__icon">🧭</div>
             <h3 class="card__title">Guided onboarding flows</h3>
-            <p class="card__body">Auth and provider configuration happen through natural dialogue, not complex setup screens.</p>
+            <p class="card__body">Auth and provider configuration built-in on the chat interface.</p>
           </div>
           <div class="card">
             <div class="card__icon">🔌</div>
             <h3 class="card__title">Provider abstraction</h3>
-            <p class="card__body">Swap between LLM backends at any time without touching a single line of OS logic.</p>
+            <p class="card__body">Swap between LLM backends at any time and have our basic LLama integration ready.</p>
           </div>
           <div class="card">
             <div class="card__icon">🎯</div>
             <h3 class="card__title">Intent handling</h3>
-            <p class="card__body">Free-form messages are mapped to a controlled set of deterministic system actions.</p>
+            <p class="card__body">Tasks you want to accomplish in regular operational system, but using natural language.</p>
           </div>
           <div class="card">
             <div class="card__icon">📜</div>
@@ -111,6 +111,11 @@
             <div class="card__icon">🗺️</div>
             <h3 class="card__title">Extensible by design</h3>
             <p class="card__body">A plugin and tool system is on the roadmap — notes, files, browser automation, and more.</p>
+          </div>
+          <div class="card">
+            <div class="card__icon">🔒</div>
+            <h3 class="card__title">Secure</h3>
+            <p class="card__body">Security is a top priority, with sensitive data encrypted and access controlled.</p>
           </div>
         </div>
       </div>
@@ -126,7 +131,7 @@
             <div class="step__number">01</div>
             <div class="step__content">
               <h3>You send a message</h3>
-              <p>Anything from <code>"help"</code> to <code>"change provider"</code> — no syntax required.</p>
+              <p>You can login by typing login, the assistant will guide you, or change user configuration, and get into app contexts.</p>
             </div>
           </li>
           <li class="step">
@@ -139,15 +144,8 @@
           <li class="step">
             <div class="step__number">03</div>
             <div class="step__content">
-              <h3>Message is routed through a state machine</h3>
-              <p>Not authenticated → auth flow. No AI provider → provider setup. Otherwise → ready state with full intent handling.</p>
-            </div>
-          </li>
-          <li class="step">
-            <div class="step__number">04</div>
-            <div class="step__content">
-              <h3>Reply returned & state persisted</h3>
-              <p>CuriOS responds, then saves updated state and message history for the next turn.</p>
+              <h3>Message is routed</h3>
+              <p>A completely new user experience, with a fully chat interface that can be used to browse, save files and interact with various tools.</p>
             </div>
           </li>
         </ol>
@@ -174,6 +172,7 @@
               <tr><td>Security</td><td><code>"change my password"</code></td></tr>
               <tr><td>Providers</td><td><code>"change provider"</code></td></tr>
               <tr><td>Account</td><td><code>"delete my user"</code></td></tr>
+              <tr><td>Apps</td><td><code>"use Browser"</code></td></tr>
             </tbody>
           </table>
         </div>
