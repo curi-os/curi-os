@@ -225,6 +225,178 @@ svg {
   margin-top: 2.5rem;
 }
 
+/* ---------- Intro chat (CSS-only animation) --------------- */
+.intro-chat {
+  width: 100%;
+  max-width: 820px;
+  margin-top: 2.25rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  background: radial-gradient(800px 320px at 50% -20%, rgba(249, 134, 17, 0.18), transparent 60%),
+              var(--color-bg);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.intro-chat__top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.85rem;
+  padding: 1.75rem 1.5rem 1.25rem;
+}
+
+.intro-chat__logo {
+  opacity: 0;
+  transform: translateY(6px);
+  animation: introFadeUp 0.55s ease forwards;
+  animation-delay: 0.05s;
+}
+
+.intro-chat__pill {
+  opacity: 0;
+  transform: translateY(6px);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+  border-radius: 999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.9rem;
+  animation: introFadeUp 0.55s ease forwards;
+  animation-delay: 0.18s;
+}
+
+.intro-chat__thread {
+  padding: 0 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  text-align: left;
+}
+
+.intro-chat__bubble {
+  max-width: 76%;
+  padding: 0.75rem 0.95rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+  font-size: 0.95rem;
+  line-height: 1.55;
+  text-align: left;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: bubbleIn 0.45s ease forwards;
+  animation-delay: var(--d, 0s);
+  will-change: transform, opacity;
+}
+
+.intro-chat__bubble a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.intro-chat__bubble code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.05em 0.35em;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.22);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.intro-chat__bubble--system {
+  align-self: flex-start;
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-top-left-radius: var(--radius-sm);
+}
+
+.intro-chat__bubble--user {
+  align-self: flex-end;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border-color: rgba(255, 255, 255, 0.22);
+  border-top-right-radius: var(--radius-sm);
+}
+
+.intro-chat__bubble--typing {
+  align-self: flex-start;
+  width: 84px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  background: var(--color-surface);
+  color: var(--color-text-muted);
+  border-top-left-radius: var(--radius-sm);
+  --hold: 0.75s;
+  animation:
+    bubbleIn 0.35s ease forwards,
+    bubbleOut 0.25s ease forwards;
+  animation-delay:
+    var(--d, 0s),
+    calc(var(--d, 0s) + var(--hold));
+}
+
+.intro-chat__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--color-text-muted);
+  opacity: 0.7;
+  animation: typingDot 1.05s ease-in-out infinite;
+}
+
+.intro-chat__dot:nth-child(2) { animation-delay: 0.15s; }
+.intro-chat__dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes introFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bubbleIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bubbleOut {
+  to {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes typingDot {
+  0%, 100% { transform: translateY(0); opacity: 0.55; }
+  50% { transform: translateY(-4px); opacity: 0.95; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .intro-chat__logo,
+  .intro-chat__pill,
+  .intro-chat__bubble {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .intro-chat__dot {
+    animation: none;
+  }
+
+  .intro-chat__bubble--typing {
+    display: none;
+  }
+}
+
 /* ---------- Terminal -------------------------------------- */
 .terminal {
   width: 100%;
@@ -296,10 +468,43 @@ svg {
   border-top: 1px solid var(--color-border);
 }
 
+/* ---------- Demo ------------------------------------------ */
+.demo {
+  padding: 5rem 0;
+  border-top: 1px solid var(--color-border);
+}
+
+.demo__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.demo__col {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.demo__video {
+  width: 100%;
+  display: block;
+  border-radius: var(--radius-md);
+  background: var(--color-surface-2);
+  box-shadow: var(--shadow);
+  margin-bottom: 1rem;
+}
+
 .features__grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  #apps .features__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 
 .card {
@@ -394,6 +599,64 @@ svg {
 .commands {
   padding: 5rem 0;
   border-top: 1px solid var(--color-border);
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+}
+
+.tabs__input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.tabs__label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: rgba(255, 255, 255, 0.03);
+  color: var(--color-text-muted);
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: transform 0.15s, opacity 0.2s, border-color 0.2s, color 0.2s;
+  user-select: none;
+}
+
+.tabs__label:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+#commands-tab-system:checked + .tabs__label,
+#commands-tab-browser:checked + .tabs__label {
+  color: var(--color-text);
+  border-color: rgba(249, 134, 17, 0.35);
+  background: rgba(249, 134, 17, 0.12);
+}
+
+.tabs__panels {
+  width: 100%;
+}
+
+.tabs__panel {
+  display: none;
+}
+
+#commands-tab-system:checked ~ .tabs__panels .tabs__panel--system {
+  display: block;
+}
+
+#commands-tab-browser:checked ~ .tabs__panels .tabs__panel--browser {
+  display: block;
 }
 
 .table-wrap {
@@ -564,5 +827,9 @@ svg {
 
   .step {
     gap: 1rem;
+  }
+
+  .demo__grid {
+    grid-template-columns: 1fr;
   }
 }
