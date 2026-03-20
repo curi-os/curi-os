@@ -238,6 +238,24 @@ svg {
   overflow: hidden;
 }
 
+/* Scroll-driven mode (enabled by JS via data-mode="scroll") */
+.intro-chat[data-mode="scroll"] .intro-chat__logo,
+.intro-chat[data-mode="scroll"] .intro-chat__pill,
+.intro-chat[data-mode="scroll"] .intro-chat__bubble {
+  animation: none !important;
+}
+
+.intro-chat[data-mode="scroll"] .intro-chat__logo,
+.intro-chat[data-mode="scroll"] .intro-chat__pill {
+  opacity: 1;
+  transform: none;
+}
+
+.intro-chat[data-mode="scroll"] .intro-chat__bubble {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
 .intro-chat__top {
   display: flex;
   flex-direction: column;
